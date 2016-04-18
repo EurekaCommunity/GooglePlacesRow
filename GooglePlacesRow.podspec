@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.frameworks            = "Accelerate", "AVFoundation", "CoreData", "CoreGraphics", "CoreBluetooth", "CoreLocation", "CoreText", "Foundation", "GLKit", "ImageIO", "OpenGLES", "QuartzCore", "SystemConfiguration", "GoogleMaps" # required for GoogleMaps.framework  
   s.vendored_frameworks = "Frameworks/GoogleMaps.framework"
   s.prepare_command = <<-CMD
-                        curl -o GoogleMaps 'https://raw.githubusercontent.com/Reflejo/GoogleMapsPodspec/master/369280b0e1f04cb7-GoogleMaps-1.13.0.tar.gz'
+                        curl -o GoogleMaps 'https://www.gstatic.com/cpdc/369280b0e1f04cb7-GoogleMaps-1.13.0.tar.gz'
                         tar -zxvf GoogleMaps
                    CMD
   #s.dependency 'GoogleMaps', '~> 1.13'

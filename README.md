@@ -25,9 +25,10 @@ The project is experimental and open to changes although it is already quite cus
 ## Usage
 
 ```swift
-// in AppDelegate.swift, specifically application:didFinishLaunchingWithOptions:
-// or where ever you want
+// in AppDelegate.swift
+import GoogleMaps
 
+// then in application:didFinishLaunchingWithOptions:
 let apiKey = "YOUR_API_KEY"
 GMSServices.provideAPIKey(apiKey)
 
@@ -73,9 +74,10 @@ If you use **GooglePlacesRow** in your app we would love to hear about it! Drop 
 
 Follow these steps to run Example project:
 * Clone GooglePlacesRow repository
+* Run `carthage update` in the root of the project
+* Due to the fact that the Google Maps binary is too large to be uploaded to Github you will have to get that framework by another means and paste it inside the `Frameworks` folder (create it, if it does not exist). You can for example download it from [here](https://www.gstatic.com/cpdc/369280b0e1f04cb7-GoogleMaps-1.13.0.tar.gz).
 * Open GooglePlacesRow workspace 
 * **Set your Google places API KEY in `AppDelegate.swift`**
-* Due to the fact that the Google Maps binary is too large to be uploaded to Github you will have to get that frame work by another means and paste it inside the `Frameworks` folder (create it, if it does not exist). You can for example download it from [here](https://www.gstatic.com/cpdc/369280b0e1f04cb7-GoogleMaps-1.13.0.tar.gz)
 * and run the *Example* project.
 
 
@@ -88,7 +90,7 @@ Follow these steps to run Example project:
 To install GooglePlacesRow, simply add the following line to your Podfile:
 
 ```ruby
-pod 'GooglePlacesRow', '~> 1.0'
+pod 'GooglePlacesRow'
 ```
 
 #### Carthage
@@ -98,7 +100,7 @@ pod 'GooglePlacesRow', '~> 1.0'
 To install GooglePlacesRow, simply add the following line to your Cartfile:
 
 ```ogdl
-github "EurekaCommunity/GooglePlacesRow" ~> 1.0
+github "EurekaCommunity/GooglePlacesRow"
 ```
 
 ## Customization

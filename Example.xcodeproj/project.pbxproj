@@ -164,6 +164,7 @@
 				28F828C91C4B714D00330CF4 /* Frameworks */,
 				28F828CA1C4B714D00330CF4 /* Resources */,
 				287D0A811C4B7B55004566D6 /* Embed Frameworks */,
+				8F70A5411CC53E8400E7793A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -272,6 +273,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8F70A5411CC53E8400E7793A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28F828C81C4B714D00330CF4 /* Sources */ = {
