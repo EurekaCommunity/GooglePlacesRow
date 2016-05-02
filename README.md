@@ -1,9 +1,9 @@
 
 <p align="left">
-<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>
+<!--<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>-->
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat" alt="Swift 2 compatible" /></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a>
+<!--<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a>-->
 <a href="https://cocoapods.org/pods/XLActionController"><img src="https://img.shields.io/badge/pod-0.0.1-blue.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/EurekaCommunity/GooglePlacesRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
@@ -19,6 +19,8 @@ GooglePlacesRow includes two rows with similar functionality but their options a
 * GooglePlacesTableRow: displays a `UITableView` directly below the cell for the user to choose the desired option.
 
 The project is experimental and open to changes although it is already quite customizable. 
+
+Please follow the [installation instructions](#installation)
 
  <img src="Example/GooglePlacesGif.gif" width="300"/>
 
@@ -93,7 +95,11 @@ To install GooglePlacesRow, simply add the following line to your Podfile:
 pod 'GooglePlacesRow'
 ```
 
-#### Carthage
+Then you have to tell Xcode where the Google Places framework is. The easiest way to do it is by adding `$(PROJECT_DIR)/Pods/GooglePlacesRow/Frameworks` to the `Build Settings/Framework Search Paths` of your target.
+
+> Note: Do not add `pod 'GoogleMaps'` to your podfile as this library includes it as a vendored framework
+
+<!--#### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a simple, decentralized dependency manager for Cocoa.
 
@@ -101,7 +107,7 @@ To install GooglePlacesRow, simply add the following line to your Cartfile:
 
 ```ogdl
 github "EurekaCommunity/GooglePlacesRow"
-```
+```-->
 
 ## Customization
 
@@ -154,9 +160,13 @@ In this case just make sure your cell conforms to `EurekaGooglePlacesTableViewCe
 
 ## FAQ
 
-#### No questions asked yet :-}. 
+#### Xcode says `ld: framework not found GoogleMaps for architecture x86_64`. 
 
-Have a look at [Customization](#customization)
+This is most probalby because you forgot to tell Xcode where `GoogleMaps.framework` is or you did forget to download it altogether. Please follow the [example instructions](#examples) or the [installation instructions](#installation).
+
+## Future work
+* Carthage compatibility
+* Investigate automation of the installation process
 
 
 
