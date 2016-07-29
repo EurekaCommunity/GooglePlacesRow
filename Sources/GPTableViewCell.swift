@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GoogleMaps
+import GooglePlaces
 import Eureka
 
 public protocol EurekaGooglePlacesTableViewCell {

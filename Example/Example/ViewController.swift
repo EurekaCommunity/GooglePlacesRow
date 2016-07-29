@@ -8,7 +8,7 @@
 import UIKit
 import GooglePlacesRow
 import Eureka
-import GoogleMaps
+import GooglePlaces
 
 class ViewController: FormViewController {
 

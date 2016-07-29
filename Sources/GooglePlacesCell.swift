@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Eureka
-import GoogleMaps
+import GooglePlaces
 
 /// This is the general cell for the GooglePlacesCell. Create a subclass or use GooglePlacesCollectionCell or GooglePlacesTableCell instead.
 public class GooglePlacesCell: _FieldCell<GooglePlace>, CellType {
