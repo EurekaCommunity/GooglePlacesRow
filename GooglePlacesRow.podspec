@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "GooglePlacesRow"
-  s.version          = "1.0.0"
+  s.version          = "1.0.1"
   s.summary          = "A row extension for Eureka that allows the user to pick a place based on Google Places autocomplete feature"
   s.homepage         = "https://github.com/EurekaCommunity/GooglePlacesRow"
   s.license          = { type: 'MIT', file: 'LICENSE' }
