@@ -14,17 +14,17 @@ By [Xmartlabs SRL](http://EurekaCommunity.com).
 
 ## Contents
 
-* [Inroduction]
-* [Usage]
-* [Dependencies]
-* [Requirements]
-* [Getting involved]
-* [Examples]
-* [Installation]
-* [Customization]
-* [FAQ]
+* [Introduction](#introduction)
+* [Usage](#usage)
+* [Dependencies](#dependencies)
+* [Requirements](#requirements)
+* [Getting involved](#getting-involved)
+* [Examples](#examples)
+* [Installation](#installation)
+* [Customization](#customization)
+* [FAQ](#faq)
 
-## Inroduction
+## Introduction
 
 GooglePlacesRow is a row extension for Eureka. It implements a row where the user can use Google Places autocomplete functionality to select a place suggested by the API.
 
