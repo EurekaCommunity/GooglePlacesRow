@@ -10,25 +10,25 @@ import Foundation
 import UIKit
 
 
-public class GooglePlacesCollectionCell<CollectionViewCell: UICollectionViewCell where CollectionViewCell: EurekaGooglePlacesCollectionViewCell>: GooglePlacesCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+open class GooglePlacesCollectionCell<CollectionViewCell: UICollectionViewCell>: GooglePlacesCell, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout where CollectionViewCell: EurekaGooglePlacesCollectionViewCell {
     
     /// callback that can be used to cuustomize the appearance of the UICollectionViewCell in the inputAccessoryView
-    public var customizeCollectionViewCell: (CollectionViewCell -> Void)?
+    public var customizeCollectionViewCell: ((CollectionViewCell) -> Void)?
     
     /// UICollectionView that acts as inputAccessoryView.
     public lazy var collectionView: UICollectionView? = {
-        let collectionView = UICollectionView(frame: CGRectMake(0, 0, self.contentView.frame.width, 50), collectionViewLayout: self.collectionViewLayout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.contentView.frame.width, height: 50), collectionViewLayout: self.collectionViewLayout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.backgroundColor = UIColor.whiteColor()
-        collectionView.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: self.cellReuseIdentifier)
+        collectionView.backgroundColor = UIColor.white
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: self.cellReuseIdentifier)
         return collectionView
     }()
     
     public var collectionViewLayout: UICollectionViewLayout = {
         var layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .Horizontal
+        layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5)
@@ -39,11 +39,15 @@ public class GooglePlacesCollectionCell<CollectionViewCell: UICollectionViewCell
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    public override var inputAccessoryView: UIView? {
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    open override var inputAccessoryView: UIView? {
         return self.collectionView
     }
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         
     }
@@ -53,35 +57,35 @@ public class GooglePlacesCollectionCell<CollectionViewCell: UICollectionViewCell
     }
     
     //MARK: UICollectionViewDelegate and Datasource
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return predictions?.count ?? 0
     }
     
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
-        if let prediction = predictions?[indexPath.row] {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! CollectionViewCell
+        if let prediction = predictions?[(indexPath as NSIndexPath).row] {
             cell.setText(prediction)
         }
         customizeCollectionViewCell?(cell)
         return cell
     }
     
-    public func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if let prediction = predictions?[indexPath.row] {
-            row.value = GooglePlace.Prediction(prediction: prediction)
-            cellResignFirstResponder()
+    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let prediction = predictions?[(indexPath as NSIndexPath).row] {
+            row.value = GooglePlace.prediction(prediction: prediction)
+            _ = cellResignFirstResponder()
         }
     }
     
-    public func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cell = CollectionViewCell(frame: CGRectZero)
-        if let prediction = predictions?[indexPath.row] {
+    open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cell = CollectionViewCell(frame: CGRect.zero)
+        if let prediction = predictions?[(indexPath as NSIndexPath).row] {
             cell.setText(prediction)
         }
         return cell.sizeThatFits()
     }
     
-    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 }

@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to GooglePlacesRow will be documented in this file.
 
+### Master branch
+<!-- Released on 2016-01-20. -->
+
+* Swift 3 support
+
+### [1.0.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/1.0.1)
+
+* Minor readme fix.
+
 ### [1.0.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/1.0.0)
 <!-- Released on 2016-01-20. -->
 

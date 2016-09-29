@@ -12,60 +12,64 @@ import Eureka
 import GooglePlaces
 
 /// This is the general cell for the GooglePlacesCell. Create a subclass or use GooglePlacesCollectionCell or GooglePlacesTableCell instead.
-public class GooglePlacesCell: _FieldCell<GooglePlace>, CellType {
+open class GooglePlacesCell: _FieldCell<GooglePlace>, CellType {
     
     /// Defines if the cell should wait for a moment before requesting places from google when the user edits the textField
-    public var useTimer = true
+    open var useTimer = true
     
     /// The interval to wait before requesting places from Google if useTimer = true
-    public var timerInterval = 0.3
+    open var timerInterval = 0.3
     
     
     //MARK: Private / internal
     let cellReuseIdentifier = "Eureka.GooglePlaceCellIdentifier"
     var predictions: [GMSAutocompletePrediction]?
     
-    private var autocompleteTimer: NSTimer?
+    fileprivate var autocompleteTimer: Timer?
     
     //MARK: Methods
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    override public func setup() {
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override open func setup() {
         super.setup()
-        textField.autocorrectionType = .No
-        textField.autocapitalizationType = .Words
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .words
     }
     
     //MARK: UITextFieldDelegate
-    public override func textFieldDidBeginEditing(textField: UITextField) {
-        formViewController()?.beginEditing(self)
+    open override func textFieldDidBeginEditing(_ textField: UITextField) {
+        formViewController()?.beginEditing(of: self)
         formViewController()?.textInputDidBeginEditing(textField, cell: self)
         textField.selectAll(nil)
     }
     
-    public override func textFieldDidChange(textField: UITextField) {
+    open override func textFieldDidChange(_ textField: UITextField) {
         super.textFieldDidChange(textField)
         if useTimer {
             if let timer = autocompleteTimer {
                 timer.invalidate()
                 autocompleteTimer = nil
             }
-            autocompleteTimer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: #selector(GooglePlacesCell.timerFired(_:)), userInfo: nil, repeats: false)
+            autocompleteTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(GooglePlacesCell.timerFired(_:)), userInfo: nil, repeats: false)
         } else {
             autocomplete()
         }
     }
     
-    public override func textFieldDidEndEditing(textField: UITextField) {
-        formViewController()?.endEditing(self)
+    open override func textFieldDidEndEditing(_ textField: UITextField) {
+        formViewController()?.endEditing(of: self)
         formViewController()?.textInputDidEndEditing(textField, cell: self)
         textField.text = row.displayValueFor?(row.value)
     }
     
-    private func autocomplete() {
-        if let text = textField.text where !text.isEmpty {
+    fileprivate func autocomplete() {
+        if let text = textField.text , !text.isEmpty {
             (row as? GooglePlacesRowProtocol)?.autoComplete(text)
         } else {
             predictions?.removeAll()
@@ -78,7 +82,7 @@ public class GooglePlacesCell: _FieldCell<GooglePlace>, CellType {
     /**
      Function called when the Google Places autocomplete timer is fired
      */
-    func timerFired(timer: NSTimer?) {
+    func timerFired(_ timer: Timer?) {
         autocompleteTimer?.invalidate()
         autocompleteTimer = nil
         autocomplete()

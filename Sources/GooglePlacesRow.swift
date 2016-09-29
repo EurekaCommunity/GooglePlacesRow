@@ -10,7 +10,7 @@ import Eureka
 import GooglePlaces
 
 protocol GooglePlacesRowProtocol {
-    func autoComplete(text: String)
+    func autoComplete(_ text: String)
 }
 
 /**
@@ -20,21 +20,21 @@ protocol GooglePlacesRowProtocol {
  - Prediction: The value will be of this type if the user selects an option suggested by requesting autocomplete of the Google Places API.
  */
 public enum GooglePlace {
-    case UserInput(value: String)
-    case Prediction(prediction: GMSAutocompletePrediction)
+    case userInput(value: String)
+    case prediction(prediction: GMSAutocompletePrediction)
 }
 
 extension GooglePlace: Equatable, InputTypeInitiable {
     public init?(string stringValue: String) {
-        self = .UserInput(value: stringValue)
+        self = .userInput(value: stringValue)
     }
 }
 
 public func == (lhs: GooglePlace, rhs: GooglePlace) -> Bool {
     switch (lhs, rhs) {
-    case (let .UserInput( val), let .UserInput( val2)):
+    case (let .userInput( val), let .userInput( val2)):
         return val == val2
-    case (let .Prediction( pred), let .Prediction( pred2)):
+    case (let .prediction( pred), let .prediction( pred2)):
         if pred.placeID != nil {
             return pred.placeID == pred2.placeID
         }
@@ -45,9 +45,9 @@ public func == (lhs: GooglePlace, rhs: GooglePlace) -> Bool {
 }
 
 /// Generic GooglePlaces rows superclass
-public class _GooglePlacesRow<Cell: GooglePlacesCell where Cell.Value == GooglePlace>: FieldRow<GooglePlace, Cell>, GooglePlacesRowProtocol {
+open class _GooglePlacesRow<Cell: GooglePlacesCell>: FieldRow<Cell>, GooglePlacesRowProtocol {
     /// client that connects with Google Places
-    private let placesClient = GMSPlacesClient()
+    fileprivate let placesClient = GMSPlacesClient()
     
     /// Google Places filter. Change this to search for cities, addresses, country, etc
     public var placeFilter: GMSAutocompleteFilter?
@@ -56,27 +56,27 @@ public class _GooglePlacesRow<Cell: GooglePlacesCell where Cell.Value == GoogleP
     public var placeBounds: GMSCoordinateBounds?
     
     /// Will be called when Google Places request returns an error.
-    public var onNetworkingError: (NSError? -> Void)?
+    public var onNetworkingError: ((Error?) -> Void)?
 
     required public init(tag: String?) {
         super.init(tag: tag)
         placeFilter = GMSAutocompleteFilter()
-        placeFilter?.type = .City
+        placeFilter?.type = .city
         displayValueFor = { place in
             guard let place = place else {
                 return nil
             }
             switch place {
-            case let GooglePlace.UserInput(val):
+            case let GooglePlace.userInput(val):
                 return val
-            case let GooglePlace.Prediction(pred):
+            case let GooglePlace.prediction(pred):
                 return pred.attributedFullText.string
             }
         }
     }
 
-    func autoComplete(text: String) {
-        placesClient.autocompleteQuery(text, bounds: placeBounds, filter: placeFilter, callback: { [weak self] (results, error: NSError?) -> Void in
+    func autoComplete(_ text: String) {
+        placesClient.autocompleteQuery(text, bounds: placeBounds, filter: placeFilter, callback: { [weak self] (results, error: Error?) -> Void in
             guard let results = results else {
                 self?.onNetworkingError?(error)
                 return

@@ -3,6 +3,7 @@
 <!--<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>-->
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat" alt="Swift 2 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 2 compatible" /></a>
 <!--<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a>-->
 <a href="https://cocoapods.org/pods/XLActionController"><img src="https://img.shields.io/badge/pod-1.0.1-blue.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/EurekaCommunity/GooglePlacesRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
@@ -11,6 +12,8 @@
 By [Xmartlabs SRL](http://EurekaCommunity.com).
 
 **Current Google Places version used is 2.0.1**
+
+**Swift 3 is currently supported in master branch**
 
 ## Contents
 
@@ -91,9 +94,20 @@ If you use **GooglePlacesRow** in your app we would love to hear about it! Drop 
 
 ## Examples
 
+### For Swift 2 (1.0.1 or before)
+
 Follow these steps to run Example project:
 * Clone GooglePlacesRow repository
 * Run `carthage update` in the root of the project
+* Open GooglePlacesRow workspace 
+* **Set your Google places API KEY in `AppDelegate.swift`**
+* and run the *Example* project.
+
+### For Swift 3 (master branch)
+
+Follow these steps to run Example project:
+* Clone GooglePlacesRow repository
+* Execute `git submodule add https://github.com/xmartlabs/Eureka.git` in the cloned folder.
 * Open GooglePlacesRow workspace 
 * **Set your Google places API KEY in `AppDelegate.swift`**
 * and run the *Example* project.

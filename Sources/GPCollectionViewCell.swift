@@ -12,12 +12,12 @@ import Eureka
 
 
 public protocol EurekaGooglePlacesCollectionViewCell {
-    func setText(prediction: GMSAutocompletePrediction)
+    func setText(_ prediction: GMSAutocompletePrediction)
     func sizeThatFits() -> CGSize
 }
 
 /// Default cell for the inputAccessoryView of the GooglePlacesRow
-public class GPCollectionViewCell: UICollectionViewCell, EurekaGooglePlacesCollectionViewCell {
+open class GPCollectionViewCell: UICollectionViewCell, EurekaGooglePlacesCollectionViewCell {
     public var label = UILabel()
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,25 +30,25 @@ public class GPCollectionViewCell: UICollectionViewCell, EurekaGooglePlacesColle
     }
     
     func initialize() {
-        label.font = UIFont.systemFontOfSize(13)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.numberOfLines = 2
         label.minimumScaleFactor = 0.8
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor.blueColor()
+        label.textColor = UIColor.blue
         contentView.addSubview(label)
-        contentView.backgroundColor = UIColor.whiteColor()
+        contentView.backgroundColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-(4)-[label]-(4)-|", options: [], metrics: nil, views: ["label": label]))
-        contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label]|", options: [], metrics: nil, views: ["label": label]))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-(4)-[label]-(4)-|", options: [], metrics: nil, views: ["label": label]))
+        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[label]|", options: [], metrics: nil, views: ["label": label]))
     }
     
-    public func setText(prediction: GMSAutocompletePrediction) {
+    open func setText(_ prediction: GMSAutocompletePrediction) {
         label.text = prediction.attributedFullText.string
     }
     
-    public func sizeThatFits() -> CGSize {
-        label.frame = CGRectMake(0, 0, 180, 40)
+    open func sizeThatFits() -> CGSize {
+        label.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
         label.sizeToFit()
-        return CGSizeMake(label.frame.width + 8, 40)
+        return CGSize(width: label.frame.width + 8, height: 40)
     }
 }
