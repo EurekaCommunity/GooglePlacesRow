@@ -13,7 +13,7 @@ By [Xmartlabs SRL](http://EurekaCommunity.com).
 
 **Current Google Places version used is 2.0.1**
 
-**Swift 3 is currently supported in master branch**
+**Swift 3 is supported from version 2.0**
 
 ## Contents
 
@@ -80,7 +80,7 @@ To see what you can customize have a look at the [Customization](#customization)
 ## Requirements
 
 * iOS 8.0+
-* Xcode 7.3+
+* Xcode 8+
 
 ## Getting involved
 
@@ -103,7 +103,7 @@ Follow these steps to run Example project:
 * **Set your Google places API KEY in `AppDelegate.swift`**
 * and run the *Example* project.
 
-### For Swift 3 (master branch)
+### For Swift 3
 
 Follow these steps to run Example project:
 * Clone GooglePlacesRow repository
