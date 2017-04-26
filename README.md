@@ -34,7 +34,7 @@ GooglePlacesRow includes two rows with similar functionality but their options a
 * GooglePlacesAccessoryRow: displays a collection view as the `inputAccessoryView` of the cell. The user will be able to scroll horizontally to select the desired place
 * GooglePlacesTableRow: displays a `UITableView` directly below the cell for the user to choose the desired option.
 
-The project is experimental and open to changes although it is already quite customizable. 
+The project is experimental and open to changes although it is already quite customizable.
 
 
 
@@ -79,7 +79,7 @@ To see what you can customize have a look at the [Customization](#customization)
 ## Requirements
 
 * iOS 8.0+
-* Xcode 8+
+* Xcode 8.3+
 
 ## Getting involved
 
@@ -98,7 +98,7 @@ If you use **GooglePlacesRow** in your app we would love to hear about it! Drop 
 Follow these steps to run Example project:
 * Clone GooglePlacesRow repository
 * Run `carthage update` in the root of the project
-* Open GooglePlacesRow workspace 
+* Open GooglePlacesRow workspace
 * **Set your Google places API KEY in `AppDelegate.swift`**
 * and run the *Example* project.
 
@@ -107,7 +107,7 @@ Follow these steps to run Example project:
 Follow these steps to run Example project:
 * Clone GooglePlacesRow repository
 * Execute `git submodule add https://github.com/xmartlabs/Eureka.git` in the cloned folder.
-* Open GooglePlacesRow workspace 
+* Open GooglePlacesRow workspace
 * **Set your Google places API KEY in `AppDelegate.swift`**
 * and run the *Example* project.
 
@@ -189,7 +189,7 @@ In this case just make sure your cell conforms to `EurekaGooglePlacesTableViewCe
 
 ## FAQ
 
-#### Xcode says `ld: framework not found GoogleMaps for architecture x86_64`. 
+#### Xcode says `ld: framework not found GoogleMaps for architecture x86_64`.
 
 This is most probalby because you forgot to tell Xcode where `GoogleMapsBase.framework` or `GooglePlaces.framework` is or you did forget to download it altogether. Please follow the [example instructions](#examples) or the [installation instructions](#installation).
 
