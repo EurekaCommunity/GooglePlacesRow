@@ -5,6 +5,7 @@ All notable changes to GooglePlacesRow will be documented in this file.
 <!-- Released on 2017-04-26. -->
 
 * Added Eureka 3.0.0 support
+* Support for GooglePlaces 2.2
 
 ### [2.0.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/2.0.0)
 

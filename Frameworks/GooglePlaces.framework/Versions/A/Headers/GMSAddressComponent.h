@@ -8,13 +8,9 @@
 //  Service: https://developers.google.com/maps/terms
 //
 
-#if __has_feature(modules)
-@import GoogleMapsBase;
-#else
-#import <GoogleMapsBase/GoogleMapsBase.h>
-#endif
+#import <Foundation/Foundation.h>
 
-GMS_ASSUME_NONNULL_BEGIN
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Represents a component of an address, e.g., street number, postcode, city, etc.
@@ -23,8 +19,8 @@ GMS_ASSUME_NONNULL_BEGIN
 
 /**
  * Type of the address component. For a list of supported types, see
- * https://developers.google.com/places/supported_types#table2. This string will be one of the
- * constants defined in GMSPlaceTypes.h.
+ * https://developers.google.com/places/ios-api/supported_types#table2. This string will be one
+ * of the constants defined in GMSPlaceTypes.h.
  */
 @property(nonatomic, readonly, copy) NSString *type;
 
@@ -33,4 +29,4 @@ GMS_ASSUME_NONNULL_BEGIN
 
 @end
 
-GMS_ASSUME_NONNULL_END
+NS_ASSUME_NONNULL_END

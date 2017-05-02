@@ -10,7 +10,7 @@
 
 By [Xmartlabs SRL](http://EurekaCommunity.com).
 
-**Current Google Places version used is 2.0.1**
+**Current Google Places version used is 2.2 (in version 2.1.0)**
 
 **Swift 3 is supported from version 2.0**
 
@@ -124,7 +124,7 @@ To install GooglePlacesRow, simply add the following line to your Podfile:
 pod 'GooglePlacesRow'
 ```
 
-Then you have to tell Xcode where the Google Places framework is. The easiest way to do it is by adding `$(PROJECT_DIR)/Pods/GooglePlacesRow/Frameworks` to the `Build Settings/Framework Search Paths` of your target.
+This will also install Eureka and GooglePlaces.
 
 > Note: Do not add `pod 'GooglePlaces'` to your podfile as this library includes it as a vendored framework
 
@@ -191,7 +191,7 @@ In this case just make sure your cell conforms to `EurekaGooglePlacesTableViewCe
 
 #### Xcode says `ld: framework not found GoogleMaps for architecture x86_64`.
 
-This is most probalby because you forgot to tell Xcode where `GoogleMapsBase.framework` or `GooglePlaces.framework` is or you did forget to download it altogether. Please follow the [example instructions](#examples) or the [installation instructions](#installation).
+This is most probably because you forgot to tell Xcode where `GoogleMapsBase.framework` or `GooglePlaces.framework` is or you did forget to download it altogether. Please follow the [example instructions](#examples) or the [installation instructions](#installation).
 
 ## Future work
 * Carthage compatibility
