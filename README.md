@@ -2,17 +2,16 @@
 <p align="left">
 <!--<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>-->
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift2-compatible-4BC51D.svg?style=flat" alt="Swift 2 compatible" /></a>
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 2 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 3 compatible" /></a>
 <a href="https://cocoapods.org/pods/GooglePlacesRow"><img src="https://img.shields.io/cocoapods/v/GooglePlacesRow.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/EurekaCommunity/GooglePlacesRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
 By [Xmartlabs SRL](http://EurekaCommunity.com).
 
-**Current Google Places version used is 2.2 (in version 2.1.0)**
+**Current Google Places version used is 2.5 **
 
-**Swift 3 is supported from version 2.0**
+**Swift 4 is supported from version 3.0**
 
 ## Contents
 
