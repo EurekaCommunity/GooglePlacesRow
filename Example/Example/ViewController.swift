@@ -21,7 +21,7 @@ class ViewController: FormViewController {
         +++ Section("Choose from table view")
             <<< GooglePlacesTableRow("tableview(2)"){
                 $0.onNetworkingError = { error in
-                    print(error)
+                    print(error ?? "There was a netwrok error")
                 }
             }
         +++ Section("Customized cell, customized layout")

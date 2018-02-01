@@ -82,7 +82,7 @@ open class GooglePlacesCell: _FieldCell<GooglePlace>, CellType {
     /**
      Function called when the Google Places autocomplete timer is fired
      */
-    func timerFired(_ timer: Timer?) {
+    @objc func timerFired(_ timer: Timer?) {
         autocompleteTimer?.invalidate()
         autocompleteTimer = nil
         autocomplete()
