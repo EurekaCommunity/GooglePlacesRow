@@ -1,7 +1,6 @@
 
 
 <p align="left">
-<!--<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>-->
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat" alt="Swift 4 compatible" /></a>
 <a href="https://cocoapods.org/pods/GooglePlacesRow"><img src="https://img.shields.io/cocoapods/v/GooglePlacesRow.svg" alt="CocoaPods compatible" /></a>
@@ -30,7 +29,7 @@ Swift 4 is supported from version 3.0
 
 GooglePlacesRow is a row extension for Eureka. It implements a row where the user can use Google Places autocomplete functionality to select a place suggested by the API.
 
-GooglePlacesRow includes two rows with similar functionality but their options are displayed diferently:
+GooglePlacesRow includes two rows with similar functionality but their options are displayed differently:
 * GooglePlacesAccessoryRow: displays a collection view as the `inputAccessoryView` of the cell. The user will be able to scroll horizontally to select the desired place
 * GooglePlacesTableRow: displays a `UITableView` directly below the cell for the user to choose the desired option.
 
@@ -52,7 +51,7 @@ pod 'GooglePlacesRow'
 
 This will also install Eureka and GooglePlaces.
 
-> Note: Do not add `pod 'GooglePlaces'` to your podfile as this library includes it as a vendored framework
+> Note: Do not add `pod 'GooglePlaces'` to your podfile as this library includes it as a vendor framework
 
 <!--#### Carthage
 
@@ -74,7 +73,7 @@ github "EurekaCommunity/GooglePlacesRow"
 
 ### How to use GooglePlacesRow
 
-1. First navigate to `AppDelegate.swift` and add `import GooglePlaces` on top.
+1. First, navigate to `AppDelegate.swift` and add `import GooglePlaces` on top.
 
 	```swift
 	// AppDelegate.swift
@@ -175,11 +174,11 @@ Follow these steps to run Example project:
 ## Customization
 
 ### General customization
-There are five variables that you can use to modify the default behaviour of these rows:
+There are five variables that you can use to modify the default behavior of these rows:
 
 * In the row:
-	* `placeFilter`: Is a `GMSAutocompleteFilter` used in the request to Google Places to define what kind of suggestions will be returned (e.g. cities, addresses, country). Refer to the official docummentation of Google for more detailed information.
-	* `placeBounds`: Bounds to limit the search for places. Refer to the official docummentation of Google for more detailed information.
+	* `placeFilter`: Is a `GMSAutocompleteFilter` used in the request to Google Places to define what kind of suggestions will be returned (e.g. cities, addresses, country). Refer to the official documentation of Google for more detailed information.
+	* `placeBounds`: Bounds to limit the search for places. Refer to the official documentation of Google for more detailed information.
 	* `onNetworkingError`: Block that is called when the request to Google Places returns an error
 * In the cell:
 	* `useTimer`: If the request to Google Places should be throttled using a timer. If `true` then it will wait for `timerInterval` seconds before making a request. If the user continues entering text into the row then the previous request will not be fired
