@@ -1,27 +1,28 @@
 
+
 <p align="left">
 <!--<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>-->
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 3 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat" alt="Swift 4 compatible" /></a>
 <a href="https://cocoapods.org/pods/GooglePlacesRow"><img src="https://img.shields.io/cocoapods/v/GooglePlacesRow.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/EurekaCommunity/GooglePlacesRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
 By [Xmartlabs SRL](http://EurekaCommunity.com).
 
-**Current Google Places version used is 2.5 **
+**Current Google Places version used is 2.5**
 
-**Swift 4 is supported from version 3.0**
+Swift 4 is supported from version 3.0
 
 ## Contents
 
 * [Introduction](#introduction)
+* [Installation](#installation)
 * [Usage](#usage)
 * [Dependencies](#dependencies)
 * [Requirements](#requirements)
 * [Getting involved](#getting-involved)
 * [Examples](#examples)
-* [Installation](#installation)
 * [Customization](#customization)
 * [FAQ](#faq)
 
@@ -35,45 +36,105 @@ GooglePlacesRow includes two rows with similar functionality but their options a
 
 The project is experimental and open to changes although it is already quite customizable.
 
-
-
-Please follow the [installation instructions](#installation)
-
  <img src="Example/GooglePlacesGif.gif" width="300"/>
+
+## Installation
+
+#### CocoaPods
+
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects.
+
+To install GooglePlacesRow, simply add the following line to your Podfile:
+
+```ruby
+pod 'GooglePlacesRow'
+```
+
+This will also install Eureka and GooglePlaces.
+
+> Note: Do not add `pod 'GooglePlaces'` to your podfile as this library includes it as a vendored framework
+
+<!--#### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a simple, decentralized dependency manager for Cocoa.
+
+To install GooglePlacesRow, simply add the following line to your Cartfile:
+
+```ogdl
+github "EurekaCommunity/GooglePlacesRow"
+```-->
 
 ## Usage
 
-```swift
-// in AppDelegate.swift
-import GoogleMaps
+### How to get API key
+1. Navigate to [https://console.developers.google.com/](https://console.developers.google.com/)
+2. Create a new project (or choose existing one)
+3. Enable _Google Places API for iOS_
+4. Copy the key and paste in `AppDelegate.swift`
 
-// then in application:didFinishLaunchingWithOptions:
-let apiKey = "YOUR_API_KEY"
-GMSServices.provideAPIKey(apiKey)
+### How to use GooglePlacesRow
 
+1. First navigate to `AppDelegate.swift` and add `import GooglePlaces` on top.
 
-//in your subclass of FormViewController
-form +++ Section("Choose from table view")
-            <<< GooglePlacesTableRow()
-     +++ Section("Customized cell, customized layout")
-         <<< GooglePlacesAccessoryRow().cellSetup { cell, row in
-             (cell.collectionViewLayout  as? UICollectionViewFlowLayout)?.sectionInset = UIEdgeInsetsZero
-             (cell.collectionViewLayout  as? UICollectionViewFlowLayout)?.minimumInteritemSpacing = 40
-             cell.customizeCollectionViewCell = { cvcell in
-                 cvcell.label.textColor = UIColor.redColor()
-                 cvcell.layer.borderColor = UIColor.redColor().CGColor
-                 cvcell.layer.borderWidth = 1
-                 cvcell.layer.cornerRadius = 4
-                 }
-        }
-```
+	```swift
+	// AppDelegate.swift
+	import GooglePlaces
+	```
 
+2. In method `didFinishLaunchingWithOptions` add this code before `return` keyword.
+
+	```swift
+	// AppDelegate.swift, application:didFinishLaunchingWithOptions
+	let apiKey = "YOUR_API_KEY"
+	GMSServices.provideAPIKey(apiKey)
+	```
+3. Subclass your `ViewController` with `FormViewController`
+
+	```swift
+	class YourViewController: FormViewController {
+	    override func viewDidLoad() {
+	        super.viewDidLoad()
+			// Code for setting up Eureka goes here
+	    }
+	}
+	```
+
+2. Use it in your Eureka form, as you would any other Eureka row.
+
+    ```swift
+    // in your controller, in viewDidLoad()
+    form +++ Section("Choose from table view")
+        <<< GooglePlacesTableRow() { row in
+		        row.title = "Location" // Adds a title to a row
+		        row.tag = "location" // Upon parsing a form you get a nice key if you use a tag
+		        row.add(ruleSet: RuleSet<GooglePlace>()) // We can use GooglePlace() as a rule
+		        row.validationOptions = .validatesOnChangeAfterBlurred
+		        row.cell.textLabel?.textColor = UIColor.black
+			}
+			.cellUpdate { cell, row in // Optional
+		        // Do something when cell updates
+			}
+
+	    +++ Section("Customized cell, customized layout")
+	        <<< GooglePlacesAccessoryRow().cellSetup { cell, row in
+	            (cell.collectionViewLayout  as? UICollectionViewFlowLayout)?.sectionInset = UIEdgeInsets.zero
+	            (cell.collectionViewLayout  as? UICollectionViewFlowLayout)?.minimumInteritemSpacing = 40
+	            cell.customizeCollectionViewCell = { customCell in
+	                customCell.label.textColor = UIColor.red
+	                customCell.layer.borderColor = UIColor.green.cgColor
+	                customCell.layer.borderWidth = 1
+	                customCell.layer.cornerRadius = 4
+	            }
+	        }
+    ```
 To see what you can customize have a look at the [Customization](#customization) section or the [FAQ](#faq)
 
 ## Dependencies
-* Eureka (obviously)
+* Eureka
 * GooglePlaces (and all the frameworks it depends on)
 * GoogleMapsBase
+
+> Note: You only need to add `pod 'GooglePlacesRow'` to your podfile and other pods will be installed automatically
 
 ## Requirements
 
@@ -110,32 +171,6 @@ Follow these steps to run Example project:
 * **Set your Google places API KEY in `AppDelegate.swift`**
 * and run the *Example* project.
 
-
-## Installation
-
-#### CocoaPods
-
-[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects.
-
-To install GooglePlacesRow, simply add the following line to your Podfile:
-
-```ruby
-pod 'GooglePlacesRow'
-```
-
-This will also install Eureka and GooglePlaces.
-
-> Note: Do not add `pod 'GooglePlaces'` to your podfile as this library includes it as a vendored framework
-
-<!--#### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a simple, decentralized dependency manager for Cocoa.
-
-To install GooglePlacesRow, simply add the following line to your Cartfile:
-
-```ogdl
-github "EurekaCommunity/GooglePlacesRow"
-```-->
 
 ## Customization
 
