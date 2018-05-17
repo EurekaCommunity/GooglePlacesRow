@@ -227,6 +227,30 @@ In this case just make sure your cell conforms to `EurekaGooglePlacesTableViewCe
 
 This is most probably because you forgot to tell Xcode where `GoogleMapsBase.framework` or `GooglePlaces.framework` is or you did forget to download it altogether. Please follow the [example instructions](#examples) or the [installation instructions](#installation).
 
+#### How to use the value from GooglePlacesRow?
+
+The value of a `GooglePlacesRow` is a `GooglePlace` which is an enum.
+
+```swift
+public enum GooglePlace {
+    case userInput(value: String)
+    case prediction(prediction: GMSAutocompletePrediction)
+}
+```
+
+You can use `switch` to access the value:
+
+```swift
+switch row.value {
+    case .userInput(let value):  
+        print(value)  
+    case .prediction(let prediction):  
+        print(prediction.attributedPrimaryText)  
+        print(prediction.attributedSecondaryText)  
+        print(prediction.placeID)  
+}
+```
+
 ## Future work
 * Carthage compatibility
 * Investigate automation of the installation process
