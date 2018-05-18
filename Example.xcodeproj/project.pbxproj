@@ -13,6 +13,8 @@
 		28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D31C4B714D00330CF4 /* Main.storyboard */; };
 		28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D61C4B714D00330CF4 /* Assets.xcassets */; };
 		28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */; };
+		8F2BD0C920AEFDAA002601CC /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F2BD0C820AEFDAA002601CC /* CustomCell.xib */; };
+		8F2BD0CD20AEFEBD002601CC /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2BD0CC20AEFEBD002601CC /* CustomCell.swift */; };
 		8F3EDFA21CBFCE1E000754B7 /* GooglePlacesRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287D0A7A1C4B7B26004566D6 /* GooglePlacesRow.framework */; };
 		8F79C2451D9C02A300EE6D27 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F79C2441D9C02A300EE6D27 /* Eureka.framework */; };
 		8F79C2461D9C02A300EE6D27 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F79C2441D9C02A300EE6D27 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -66,6 +68,8 @@
 		28F828D61C4B714D00330CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Example/Assets.xcassets; sourceTree = "<group>"; };
 		28F828D91C4B714D00330CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28F828DB1C4B714D00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = "<group>"; };
+		8F2BD0C820AEFDAA002601CC /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		8F2BD0CC20AEFEBD002601CC /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		8F79C2441D9C02A300EE6D27 /* Eureka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Eureka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +117,7 @@
 		28F828CE1C4B714D00330CF4 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				8F2BD0CF20AF0422002601CC /* Custom Nib */,
 				28F828CF1C4B714D00330CF4 /* AppDelegate.swift */,
 				28F828D11C4B714D00330CF4 /* ViewController.swift */,
 				28F828D31C4B714D00330CF4 /* Main.storyboard */,
@@ -121,6 +126,15 @@
 				28F828DB1C4B714D00330CF4 /* Info.plist */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		8F2BD0CF20AF0422002601CC /* Custom Nib */ = {
+			isa = PBXGroup;
+			children = (
+				8F2BD0C820AEFDAA002601CC /* CustomCell.xib */,
+				8F2BD0CC20AEFEBD002601CC /* CustomCell.swift */,
+			);
+			path = "Custom Nib";
 			sourceTree = "<group>";
 		};
 		8F3EDFA11CBFCDCB000754B7 /* Frameworks */ = {
@@ -216,6 +230,7 @@
 			files = (
 				28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */,
 				28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */,
+				8F2BD0C920AEFDAA002601CC /* CustomCell.xib in Resources */,
 				28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28F828D21C4B714D00330CF4 /* ViewController.swift in Sources */,
+				8F2BD0CD20AEFEBD002601CC /* CustomCell.swift in Sources */,
 				28F828D01C4B714D00330CF4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

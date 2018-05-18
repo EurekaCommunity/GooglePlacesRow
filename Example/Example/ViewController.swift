@@ -42,6 +42,10 @@ class ViewController: FormViewController {
                 }.cellSetup { cell, row in
                 cell.collectionView?.frame = CGRect(x: 0, y: 0, width: cell.frame.size.width, height: 100)
         }
+        +++ Section("Using a custom nib file")
+            <<< CustomRow() { row in
+                row.title = "Search ..."
+            }
         +++ Section()
             <<< LabelRow(){ row in
                 row.title = "Print values to console"
