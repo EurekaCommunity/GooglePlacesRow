@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="114" id="zHk-kQ-3Xr" customClass="CustomCell" customModule="Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zHk-kQ-3Xr" id="xKP-lR-Rqp">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WHM-Wx-ITX">
+                        <rect key="frame" x="16" y="73" width="343" height="30"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Eureka" translatesAutoresizingMaskIntoConstraints="NO" id="GLq-wE-1Bv">
+                        <rect key="frame" x="16" y="15" width="171.5" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="hYg-mO-Oku"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZa-nf-YYR">
+                        <rect key="frame" x="195.5" y="30" width="163.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XZa-nf-YYR" firstAttribute="trailing" secondItem="WHM-Wx-ITX" secondAttribute="trailing" id="Pg1-bu-v1f"/>
+                    <constraint firstItem="XZa-nf-YYR" firstAttribute="centerY" secondItem="GLq-wE-1Bv" secondAttribute="centerY" id="R2G-ga-30J"/>
+                    <constraint firstItem="GLq-wE-1Bv" firstAttribute="leading" secondItem="xKP-lR-Rqp" secondAttribute="leading" constant="16" id="a1Y-D9-yzv"/>
+                    <constraint firstItem="GLq-wE-1Bv" firstAttribute="trailing" secondItem="xKP-lR-Rqp" secondAttribute="centerX" id="aZq-tw-S15"/>
+                    <constraint firstItem="WHM-Wx-ITX" firstAttribute="leading" secondItem="GLq-wE-1Bv" secondAttribute="leading" id="hIO-fb-wKT"/>
+                    <constraint firstAttribute="bottom" secondItem="WHM-Wx-ITX" secondAttribute="bottom" constant="10.5" id="p9P-WY-uWY"/>
+                    <constraint firstItem="XZa-nf-YYR" firstAttribute="leading" secondItem="GLq-wE-1Bv" secondAttribute="trailing" constant="8" id="pM5-zx-IwT"/>
+                    <constraint firstItem="WHM-Wx-ITX" firstAttribute="centerX" secondItem="xKP-lR-Rqp" secondAttribute="centerX" id="wxl-y2-0kP"/>
+                    <constraint firstItem="GLq-wE-1Bv" firstAttribute="top" secondItem="xKP-lR-Rqp" secondAttribute="top" constant="15" id="yUr-Lx-YBK"/>
+                    <constraint firstItem="WHM-Wx-ITX" firstAttribute="top" secondItem="GLq-wE-1Bv" secondAttribute="bottom" constant="8" id="ycf-9D-yzk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="myImageView" destination="GLq-wE-1Bv" id="zP9-gc-iz2"/>
+                <outlet property="textField" destination="WHM-Wx-ITX" id="IVt-4X-kLu"/>
+                <outlet property="titleLabel" destination="XZa-nf-YYR" id="Gg7-6t-PfG"/>
+            </connections>
+            <point key="canvasLocation" x="-80.5" y="36"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Eureka" width="880" height="218"/>
+    </resources>
+</document>
