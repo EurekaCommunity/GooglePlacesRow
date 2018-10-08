@@ -10,7 +10,7 @@
 
 By [Xmartlabs SRL](http://EurekaCommunity.com).
 
-**Current Google Places version used is 2.5**
+**Current Google Places version used is 2.7**
 
 Swift 4.2 is supported from version 3.1
 
