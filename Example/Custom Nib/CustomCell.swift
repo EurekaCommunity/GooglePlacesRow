@@ -12,7 +12,7 @@ class CustomCell: GooglePlacesCollectionCell<GPCollectionViewCell> {
 
     @IBOutlet public weak var myImageView: UIImageView!
 
-    required init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    required init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
@@ -22,7 +22,7 @@ class CustomCell: GooglePlacesCollectionCell<GPCollectionViewCell> {
 
     override func setup() {
         super.setup()
-        height = { UITableViewAutomaticDimension }
+        height = { UITableView.automaticDimension }
     }
 
     override func update() {

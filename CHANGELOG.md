@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to GooglePlacesRow will be documented in this file.
 
+### [3.1.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/3.1.0)
+<!-- Released on 2018-10-08. -->
+
+* Swift 4.2 migration
+
+### [3.0.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/3.0.0)
+<!-- Released on 2018-02-01. -->
+
+* Swift 4 compatibility and support for Eureka 4.0.
+* Also upgraded GooglePlaces dependency to version 2.5
+
 ### [2.1.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/2.1.0)
 <!-- Released on 2017-04-26. -->
 
