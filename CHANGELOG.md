@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to GooglePlacesRow will be documented in this file.
 
+### [3.2.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/3.2.0)
+<!-- Released on 2018-10-08. -->
+
+* Swift 5 migration
+* Upgrade to GooglePlaces 3.3
+
 ### [3.1.0](https://github.com/EurekaCommunity/GooglePlacesRow/releases/tag/3.1.0)
 <!-- Released on 2018-10-08. -->
 
