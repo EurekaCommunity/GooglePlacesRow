@@ -3,16 +3,16 @@
 <p align="left">
 <!--<a href="https://travis-ci.org/EurekaCommunity/GooglePlacesRow"><img src="https://travis-ci.org/EurekaCommunity/GooglePlacesRow.svg?branch=master" alt="Build status" /></a>-->
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
-<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift4-compatible-4BC51D.svg?style=flat" alt="Swift 4 compatible" /></a>
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift5-compatible-4BC51D.svg?style=flat" alt="Swift 5 compatible" /></a>
 <a href="https://cocoapods.org/pods/GooglePlacesRow"><img src="https://img.shields.io/cocoapods/v/GooglePlacesRow.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/EurekaCommunity/GooglePlacesRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
 By [Xmartlabs SRL](http://EurekaCommunity.com).
 
-**Current Google Places version used is 2.7**
+**Current Google Places version used is 3.3**
 
-Swift 4.2 is supported from version 3.1
+Swift 5 is supported from version 3.2
 
 ## Contents
 
@@ -138,8 +138,8 @@ To see what you can customize have a look at the [Customization](#customization)
 
 ## Requirements
 
-* iOS 8.0+
-* Xcode 8.3+
+* iOS 9.3+
+* Xcode 10.2+
 
 ## Getting involved
 
@@ -152,17 +152,6 @@ Before contributing check the [CONTRIBUTING](https://github.com/EurekaCommunity/
 If you use **GooglePlacesRow** in your app we would love to hear about it! Drop us a line on [twitter](https://twitter.com/EurekaCommunity).
 
 ## Examples
-
-### For Swift 2 (1.0.1 or before)
-
-Follow these steps to run Example project:
-* Clone GooglePlacesRow repository
-* Run `carthage update` in the root of the project
-* Open GooglePlacesRow workspace
-* **Set your Google places API KEY in `AppDelegate.swift`**
-* and run the *Example* project.
-
-### For Swift 3
 
 Follow these steps to run Example project:
 * Clone GooglePlacesRow repository
