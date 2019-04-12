@@ -86,7 +86,7 @@ github "EurekaCommunity/GooglePlacesRow"
 	```swift
 	// AppDelegate.swift, application:didFinishLaunchingWithOptions
 	let apiKey = "YOUR_API_KEY"
-	GMSServices.provideAPIKey(apiKey)
+	GMSPlacesClient.provideAPIKey(apiKey)
 	```
 3. Subclass your `ViewController` with `FormViewController`
 
