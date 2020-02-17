@@ -56,7 +56,7 @@ open class GooglePlacesCell: _FieldCell<GooglePlace>, CellType {
                 timer.invalidate()
                 autocompleteTimer = nil
             }
-            autocompleteTimer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(GooglePlacesCell.timerFired(_:)), userInfo: nil, repeats: false)
+			autocompleteTimer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(GooglePlacesCell.timerFired(_:)), userInfo: nil, repeats: false)
         } else {
             autocomplete()
         }
