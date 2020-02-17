@@ -12,9 +12,8 @@ Pod::Spec.new do |s|
   s.ios.source_files = 'Sources/**/*'
   s.ios.frameworks = 'UIKit', 'Foundation'
   s.swift_version = '5.0'
+  s.static_framework = true
   s.dependency 'Eureka' , '~> 5.0'
-  s.libraries             = "c++", "icucore", "z" # required for GoogleMaps.framework
-  s.frameworks            = "Accelerate", "AVFoundation", "CoreData", "CoreGraphics", "CoreBluetooth", "CoreLocation", "CoreText", "Foundation", "GLKit", "ImageIO", "OpenGLES", "QuartzCore", "SystemConfiguration", "GoogleMapsBase", "GooglePlaces" # required for GooglePlaces.framework
-  s.vendored_frameworks = "Frameworks/GoogleMapsBase.framework", "Frameworks/GooglePlaces.framework"
-  s.user_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/GooglePlacesRow/Frameworks"' }
-end
+  s.dependency 'GooglePlaces' , '~> 3.7'
+  s.dependency 'GoogleMaps/Base' , '~> 3.7'
+  end

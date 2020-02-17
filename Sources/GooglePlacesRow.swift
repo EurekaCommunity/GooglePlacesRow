@@ -8,6 +8,7 @@
 import Foundation
 import Eureka
 import GooglePlaces
+import GoogleMapsBase
 
 protocol GooglePlacesRowProtocol {
     func autoComplete(_ text: String)
